@@ -51,12 +51,12 @@ body { width:810px; background:transparent;}
 
 .send-btn {
 	display: block;
-	width: 290px;
-	height: 93px;
+	width: 350px;
+	height: 131px;
 	float: left;
 	clear: both;
 	background: url(../img/posalji.png)no-repeat;
-	margin-left: 10px;
+	margin-left: -12px;
 	text-indent: -9999px;
 }
 
@@ -101,7 +101,7 @@ body { width:810px; background:transparent;}
 	background: url(../img/upload.png) no-repeat;
 	display: inline-block;
 	float: left;
-	margin: 0 0 0 12px;
+	margin: -1px 0 0 13px;
 	cursor: pointer;
 }
 
