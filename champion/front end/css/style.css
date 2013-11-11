@@ -1,0 +1,45 @@
+*, body{margin:0 auto; padding:0; }
+body { width:810px; background:transparent;}
+#container{
+	margin: auto;
+	position:relative;
+	overflow:hidden;
+	width:810px;
+	height:1000px;
+}
+
+.landing{
+	background:url(../files/landing.jpg) no-repeat;
+}
+
+.thank_you{
+	background:url(../files/thank_you.jpg) no-repeat;
+}
+
+.btns{
+	position:relative;	
+	text-indent:-9999px;
+}
+
+.signup{
+	width: 370px;
+	height: 215px;
+	top: 750px;
+	background: url(../img/prijavi_se.png) no-repeat;
+}
+
+.back{
+	width:370px;
+	height:215px;
+	top: 661px;
+	background:url(../img/nazad.png) no-repeat;
+}
+
+.back a , .signup a{
+	position: absolute;
+	display: block;
+	width: 80%;
+	left: 10%;
+	top: 20%;
+	height: 39%;
+}
