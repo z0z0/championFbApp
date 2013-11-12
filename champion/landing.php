@@ -9,6 +9,8 @@
 <body>
 	<div id="container" class="landing">
 		<div class="btns signup"><a href="upload.php">Prijavi se</a></div>
+		<div class="btns vote"><a href="gallery.php">Glasaj</a></div>
+		<div class="btns rules"><a href="#">Pravila</a></div>
 	</div>
 </body>
 </html>

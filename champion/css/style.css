@@ -30,9 +30,9 @@ body { width:810px; background:transparent; font-family: 'PT Sans Narrow', sans-
 }
 
 .signup{
-	width: 370px;
+	width: 295px;
 	height: 215px;
-	top: 750px;
+	top: 770px;
 	background: url(../img/prijavi_se.png) no-repeat;
 }
 
@@ -43,7 +43,23 @@ body { width:810px; background:transparent; font-family: 'PT Sans Narrow', sans-
 	background:url(../img/nazad.png) no-repeat;
 }
 
-.back a , .signup a{
+.vote{
+	width: 278px;
+	height: 215px;
+	top: 657px;
+	background: url(../img/glasaj.png) no-repeat;
+}
+
+.rules {
+	width: 194px;
+	height: 25px;
+	top: 545px;
+	background: url(../img/rules.png) no-repeat;
+}
+
+
+
+.back a {
 	position: absolute;
 	display: block;
 	width: 80%;
@@ -52,6 +68,14 @@ body { width:810px; background:transparent; font-family: 'PT Sans Narrow', sans-
 	height: 39%;
 }
 
+.signup a, .vote a {
+	position: absolute;
+	display: block;
+	width: 80%;
+	left: 9%;
+	top: 7%;
+	height: 39%;
+}
 
 .send-btn {
 	display: block;
