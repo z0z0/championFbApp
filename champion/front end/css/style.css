@@ -381,3 +381,7 @@ body { width:810px; background:transparent; font-family: 'PT Sans Narrow', sans-
 .liked{
 	opacity:0.3;
 }
+
+.warning{
+	background:red !important;
+}

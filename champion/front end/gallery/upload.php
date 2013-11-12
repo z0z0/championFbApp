@@ -2,21 +2,23 @@
 	$error = "";
 	$msg = "";
 	
-	$file_size =$_FILES['fileToUpload']['size'];
+	
 	
 	if(empty($_FILES['fileToUpload']['tmp_name']) || $_FILES['fileToUpload']['tmp_name'] == 'none')
 	{		
-		if($_FILES['fileToUpload']['size'] > 2097152) {
-			$error .= 'Proverite velicinu Vase slike.';
-		}
-		else{
+		
+	
 			$error .= 'Greska pri uploadu.';	
-		}
+
 	}
 	else 
 	{
 		$url = "uploads/".$_FILES['fileToUpload']['name'];
 		$file_ext=strtolower(end(explode('.',$_FILES['fileToUpload']['name'])));
+		$file_size =$_FILES['fileToUpload']['size'];
+		if($file_size > 2097152) {
+			$error .= 'Proverite velicinu Vase slike. Max 2MB';
+		}
 		
 		
 		$expensions = array("jpeg","jpg","png"); 		
