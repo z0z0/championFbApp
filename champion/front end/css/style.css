@@ -1,5 +1,5 @@
 *, body{margin:0 auto; padding:0; }
-body { width:810px; background:transparent;}
+body { width:810px; background:transparent; font-family: 'PT Sans Narrow', sans-serif;}
 #container{
 	margin: auto;
 	position:relative;
@@ -18,6 +18,10 @@ body { width:810px; background:transparent;}
 
 .upload{
 	background:url(../files/upload.jpg) no-repeat;
+}
+
+.gallery{
+	background:url(../files/gallery.jpg) no-repeat;
 }
 /*dugmici*/
 .btns{
@@ -140,7 +144,7 @@ body { width:810px; background:transparent;}
 	margin: 0 0 10px 0;
 }
 
-input[type="text"] {
+.upload input[type="text"] {
 	border: none;
 	height: 40px;
 	padding-left: 10px;
@@ -153,4 +157,227 @@ input[type="text"] {
 .column-thirds input {
 	width: 90px;
 	margin-right: 6px;
+}
+
+.loader{
+	display:none;
+	left: 332px;
+	background: #fff;
+	border-radius: 30px;
+	border: 1px solid #ddd;
+	padding: 10px;
+	top: 36%;
+	position: absolute;
+	z-index: 999;
+}
+
+#controls {
+	margin: 130px 35px 10px 35px;
+	overflow: hidden;
+}
+
+#gallery-cont {
+	height: 550px;
+}
+
+#sort-by {
+	background: #f7f7f7;
+	display: inline-block;
+	padding: 14px;
+	text-transform: uppercase;
+	border-radius: 10px;
+	font-size: 18px;
+	float: left;
+}
+
+#sort-by a {
+	color: #0b3a66;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 0 5px;
+}
+
+#search-div {
+	float: right;
+	background: #ebebeb;
+	width: 270px;
+	margin: 0 5px;
+	border-radius: 10px;
+	height: 51px;
+}
+
+#search {
+	margin: 12px auto;
+	display: block;
+	width: 245px;
+	height: 30px;
+	border: none;
+	padding-left: 5px;
+	background: #0b3a66;
+	color: #fff;
+	-webkit-box-shadow: 3px 3px 13px rgba(75, 75, 73, 0.75);
+	-moz-box-shadow: 3px 3px 13px rgba(75, 75, 73, 0.75);
+	box-shadow: 3px 3px 13px rgba(75, 75, 73, 0.75);
+}
+
+/**gallery**/
+
+#itemContainer{
+	overflow: hidden;
+	margin-left: 26px;
+	list-style:none;
+}
+
+#itemContainer li{
+	float: left;
+	position: relative;
+	width: 235px;
+	height: 180px;
+	background: url(../img/image_block.png) no-repeat;
+	margin: 4px 8px;
+	cursor:pointer;
+}
+
+ .holder {
+    margin:10px 0;
+	text-align:center;
+}
+.holder a {
+    font-size:22px;
+    cursor:pointer;
+    margin:0 5px;
+    color:#fff;
+}
+.holder a:hover {
+    background-color:#222;
+    color:#fff;
+}
+.holder a.jp-current,a.jp-current:hover {
+    color:#FF4242;
+    font-weight:bold;
+    cursor:default;
+    background:none;
+}
+.holder span {
+    margin:0 5px;
+}
+.customBtns {
+    position:relative;
+}
+.arrowPrev,.arrowNext {
+	background:url("../img/arrows.png") no-repeat;
+    width:30px;
+    height:75px;
+    position:absolute;
+    top:270px;
+    cursor:pointer;
+}
+.arrowPrev {
+    background-position: -4px center;
+    left:3px;
+}
+.arrowNext {
+ 
+    background-position: -40px center;
+    right:3px;
+}
+
+.img-first, .img-second {
+	width: 82px;
+	position: absolute;
+	top: 18px;
+	left: 28px;
+	border-radius: 2px;
+}
+
+.img-second{
+	left:121px;
+}
+
+.item-info {
+	position: absolute;
+	bottom: 14px;
+	width: 100%;
+}
+
+.likes {
+	float: right;
+	margin: -1px 20px 0 0;
+	font-family: Arial,sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.name {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	color: #fff;
+	margin-left: 15px;
+}
+
+#overlay{
+	display:none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	z-index: 999;
+	opacity: 0.6;
+}
+
+#overlay-cont{
+	background: url(../files/like.png);
+	width: 100%;
+	height: 75%;
+	position: absolute;
+	z-index: 1000;
+	display:none;
+}
+
+#overlay-cont .img-first {
+	width: 263px;
+	height: auto;
+	position: absolute;
+	top: 257px;
+	left: 123px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+#overlay-cont .img-second {
+	width: 263px;
+	height: auto;
+	position: absolute;
+	top: 257px;
+	left: 421px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+#overlay-cont .item-info{
+	position: absolute;
+	bottom: 40px;
+	width: 80%;
+	margin: 0 85px;
+}
+#overlay-cont .name{
+	font-size:21px;
+}
+#overlay-cont .likes{
+	font-size: 56px;
+	margin-top: -25px;
+}
+
+#like {
+	width: 105px;
+	height: 60px;
+	background: url(../img/like.png);
+	bottom: 44px;
+	position: absolute;
+	left: 350px;
+	text-indent: -9999px;
+	cursor: pointer;
+}
+
+.liked{
+	opacity:0.3;
 }

@@ -78,7 +78,7 @@
 <body>
 	<div id="container" class="upload">
 		<div id="upload-area">
-			<img id="loading" src="img/loading.gif" style="display:none;">
+			<img id="loading" src="img/loading.gif" class="loader">
 			<div class="img-holder "id="pre">
 				<form name="form" action="" method="POST" enctype="multipart/form-data">	
 					<div class="uploaded"></div>
