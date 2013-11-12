@@ -103,8 +103,8 @@
             die("Failed to run query: " . $ex->getMessage()); 
         } 
         
-		header("Location: ../test1.php"); 
-        die("Redirecting to: test1.php"); 
+		header("Location: ../dashboard.php"); 
+        die("Redirecting to: dashboard.php"); 
 		
         } 
         else 

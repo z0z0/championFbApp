@@ -1,31 +1,36 @@
-<!doctype html>
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" media="all" href="style.css" />
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>	
-	<script type="text/javascript" src="jquery-1.9.1.js"></script>
+<?php 
+		require 'scripts/facebook.php';
+		
+		$app_id = "430747907025436";
+		$app_secret = "f0142d20d21355503b015878091bbf98";
+		$facebook = new Facebook(array(
+			'appId' => $app_id,
+			'secret' => $app_secret,
+			'cookie' => true
+		));
+		
+		$signed_request = $facebook->getSignedRequest();
+		$like_status = $signed_request["page"]["liked"];
+		
+		if ($like_status){
+			header("Location: landing.php"); 
+		//ovde sada treba vidimo da li ima usera u bazi uploada po ID-u
+			$uid = $facebook->getUser();
+	}
 	
-	<style>
-		body{ background-color: #ffffff; font-family:Arial, sans-serif; text-align:center;}
-		div {margin: auto; }
-		.row{margin:10px auto;}
-		#login-form{width:500px; overflow:hidden; border:1px solid gray; padding:5px; margin:20px auto;}
-	</style>
-</head>
+	else {
+		 header("Location: like_us.php"); 
+	}
+	?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	</head>
+	
 <body>
-	<h1>Admin Login</h1>
-	<div id="login-form">
-	<form action="logic/loging.php" method="post">
-		<div class="row">
-			<label for="username">Username</label>
-			<input type="text" name="username" id="username"/>
-		</div>
-		<div class="row">
-			<label for="username">Password</label>
-			<input type="password" name="password" id="password"/>
-		</div>
-		<input type="submit" value="Login"/>
-	</form>
-	</div>	
+	
 </body>
 </html>
