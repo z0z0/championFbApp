@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
 		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="js/upload.js"></script>
+		<script type="text/javascript" src="js/fb.js"></script>
 	</head>	
 	<script type="text/javascript">
 	
@@ -101,7 +102,7 @@
 		<div id="info-area">
 			<div class="column-half">
 				<input type="text" placeholder="* Ime i Prezime">
-				<a href="#" class="send-btn">Posalji</a>
+				<a href="gallery.php" class="send-btn">Posalji</a>
 			</div>
 			<div class="column-half">
 				<input type="text" placeholder="* Broj Mobilnog Telefona">

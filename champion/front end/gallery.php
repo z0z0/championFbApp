@@ -6,8 +6,13 @@
 		<link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
 		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>		
 		<script type="text/javascript" src="js/jPages.min.js"></script>		
+		<script type="text/javascript" src="js/fb.js"></script>		
 		<script>
 			  $(function() {
+				
+				
+				
+			  
 				$("div.holder").jPages({
 					containerID : "itemContainer",
 					perPage     : 9,
@@ -35,6 +40,8 @@
 					$('#overlay, #overlay-cont').fadeOut(500);
 				})
 			});
+			
+			
 		</script>
 	</head>	
 <body>
@@ -141,5 +148,6 @@
 					</div>
 			</div>
 	</div>
+	<div id="fb-root"></div>
 </body>
 </html>
