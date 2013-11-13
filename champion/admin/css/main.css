@@ -53,7 +53,7 @@
 		-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 	}
 	
-	th, td {padding:12px 18px 12px; text-align:center; vertical-align: middle;}
+	th, td {padding:18px 28px 18px; text-align:center; }
 	
 	th {padding-top:22px; text-shadow: 1px 1px 1px #fff; background:#e8eaeb;}
 	
@@ -114,4 +114,18 @@
 	.login{
 		text-align:right;
 		margin:10px 0 0 0;
+		overflow: hidden;
+	}
+
+	.controls {
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+}
+
+	.response{
+		position: absolute;
+		top: 9px;
+		left: 16px;
+		color:rgb(28, 177, 28);
 	}

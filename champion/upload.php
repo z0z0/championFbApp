@@ -11,6 +11,7 @@
 	</head>	
 <body>
 	<div id="container" class="upload">
+		<div id="overlay-area"></div>
 		<div id="upload-area">
 			<img id="loading" src="img/loading.gif" class="loader">
 			<div class="img-holder "id="pre">
@@ -24,7 +25,7 @@
 			</div>	
 			<div class="img-holder" id="posle">	
 				<form name="form2" action="" method="POST" enctype="multipart/form-data">	
-					<div class="uploaded" id="first"></div>
+					<div class="uploaded" id="second"></div>
 					<div class="controls">
 						<div class="mask"><input id="slika2" type="file" name="fileToUpload" class="input" accept="image/*" onchange="return ajaxFileUpload(2)"></div>
 						<span class="delete">&nbsp;</span>
@@ -47,6 +48,7 @@
 						<input type="text" name='grad' placeholder="* Grad">
 						<input type="hidden" name='slika1'id='tar_sl1'>
 						<input type="hidden" name='slika2' id='tar_sl2'>
+						<input type="hidden" name='fbid' id='fbid'>
 					</div>
 				</div>
 			</form>

@@ -1,10 +1,10 @@
 <?php 
 
     
-    $username = "root"; 
-    $password = ""; 
+    $username = "nekapa_db1505988"; 
+    $password = "N.<rR$1~6.,VvxD"; 
     $host = "localhost"; 
-    $dbname = "galerija"; 
+    $dbname = "nekapa_fb"; 
     
 
     $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'); 

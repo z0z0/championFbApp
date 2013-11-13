@@ -1,10 +1,17 @@
 $("document").ready(function(){	
-	$("#send").click(function(){	
+	$("#send").click(function(event){	
+		event.preventDefault();
 		if (validacija()){			
 			$('#tar_sl1').val($('#first img').attr('src'));
 			$('#tar_sl2').val($('#second img').attr('src'));
+			$('#fbid').val(uid)
 			var form_data = $('#reg-fields').serialize();
 			console.log(form_data);
+			$.post( "scripts/register.php", form_data , function( data ) {
+				console.log(data);
+				window.location.href = 'gallery.php';
+			})
+			
 			return false;
 		}
 	});
@@ -44,6 +51,7 @@ $("document").ready(function(){
 function ajaxFileUpload(id)
 {
 		$("#loading").show();
+		$("#overlay-area").show();
 		var target_id;
 		
 		if(id === 1){
@@ -71,10 +79,11 @@ function ajaxFileUpload(id)
 						{
 							alert(data.error);
 							$("#loading").hide();
+							$("#overlay-area").hide();
 						}else
 						{							
 							$('#'+target_id).parent().parent().parent().find('.uploaded').html('<img src="gallery/'+data.msg+'" alt="imaž" style="width:100%; height:auto;" />');
-							$("#loading").hide();
+							$("#loading, #overlay-area").hide();
 							$("input[type=file]").val('');
 						}
 					}
@@ -83,6 +92,7 @@ function ajaxFileUpload(id)
 				{
 					alert(e);
 					$("#loading").hide();
+					$("#overlay-area").hide();
 				}
 			}
 		)		

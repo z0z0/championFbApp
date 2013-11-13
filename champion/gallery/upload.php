@@ -1,8 +1,11 @@
 <?php
+	session_start();
 	$error = "";
 	$msg = "";
 	
-	
+	if (!file_exists('uploads/'.$user_id)) {
+   $target = mkdir('uploads/'.$user_id, 0777, true);
+	}
 	
 	if(empty($_FILES['fileToUpload']['tmp_name']) || $_FILES['fileToUpload']['tmp_name'] == 'none')
 	{		
@@ -13,7 +16,7 @@
 	}
 	else 
 	{
-		$url = "uploads/".$_FILES['fileToUpload']['name'];
+		//$url = 'uploads/'.$user_id.'/'.$_FILES['fileToUpload']['name'];
 		$file_ext=strtolower(end(explode('.',$_FILES['fileToUpload']['name'])));
 		$file_size =$_FILES['fileToUpload']['size'];
 		if($file_size > 2097152) {
@@ -27,8 +30,9 @@
 			}
 				
 		if(empty($error)===true){
-		
-		
+		$fileInfo = pathinfo($_FILES["fileToUpload"]["name"]);
+		$random = uniqid();
+		$url = 'uploads/'.$random. '.' . $fileInfo['extension'];
 		move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $url);
 		$msg .= "$url";
 		}

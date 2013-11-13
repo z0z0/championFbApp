@@ -7,42 +7,10 @@
 		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>		
 		<script type="text/javascript" src="js/jPages.min.js"></script>		
 		<script type="text/javascript" src="js/fb.js"></script>		
-		<script>
-			  $(function() {
-				
-				
-				
-			  
-				$("div.holder").jPages({
-					containerID : "itemContainer",
-					perPage     : 9,
-					first       : false,
-					previous    : "span.arrowPrev",
-					next        : "span.arrowNext",
-					last        : false
-				});
-				
-				$('.item').click(function(){
-					$('#overlay, #overlay-cont').fadeIn(500);
-					var target = $('#overlay-cont');
-					var src1 = $(".img-first", this).attr('src');
-					var src2 = $(".img-second", this).attr('src');
-					var name = $(".name", this).text();
-					var likes = $(".likes", this).text();
-					
-					$('#overlay-cont .img-first').attr('src', src1);
-					$('#overlay-cont .img-second').attr('src', src2);
-					$('#overlay-cont .name').text(name);
-					$('#overlay-cont .likes').text(likes);
-				});
-				
-				$('#overlay').click(function(){
-					$('#overlay, #overlay-cont').fadeOut(500);
-				})
-			});
-			
-			
-		</script>
+		<script type="text/javascript" src="js/lazyload.min.js"></script>		
+		<script type="text/javascript" src="js/validate.js"></script>		
+		<script type="text/javascript" src="js/gallery.js"></script>	
+		
 	</head>	
 <body>
 	<div id="container" class="gallery">
@@ -56,14 +24,14 @@
 		</div>
 		<div id="controls">
 			<div id="sort-by">
-				<a href="#" id="likes">Po broju lajkova</a>
+				<a href="#" onclick="loadGallery(0)">Po broju lajkova</a>
 				|
-				<a href="#" id="likes">Po imenu (A-Z)</a>
+				<a href="#" onclick="loadGallery(1)">Po imenu (A-Z)</a>
 				|
-				<a href="#" id="likes">Po datumu</a>
+				<a href="#" onclick="loadGallery(2)">Po datumu</a>
 			</div>
 			<div id="search-div">
-				<input type="text" id="search" placeholder="Pretraga..."/>
+				<input type="text" id="search" onkeyup='filters(this.value)' class="search" placeholder="Pretraga..."/>
 			</div>			
 		</div>
 		
@@ -76,77 +44,20 @@
 
 				
 					<ul id="itemContainer">
-						<li class="item">						
+						<li class="item" data-sort="feature">						
 								<img class="img-first" src='files/gallery.jpg' alt='gallery-block'/><img class="img-second" src='files/gallery.jpg' alt='gallery-block'/>
 								<div class="item-info"><span class="name">Marko Markovic</span><span class="likes">45</span></div>
 						
 						</li>
-						<li class="item">						
-								<img class="img-first" src='files/gallery.jpg' alt='gallery-block'/><img class="img-second" src='files/gallery.jpg' alt='gallery-block'/>
-								<div class="item-info"><span class="name">Lemi Markovic</span><span class="likes">43</span></div>
+									  
 						
-						</li>
-						<li class="item">						
-								<img class="img-first" src='gallery/t1.jpg' alt='gallery-block'/><img class="img-second" src='gallery/t2.jpg' alt='gallery-block'/>
-								<div class="item-info"><span class="name">Milojica</span><span class="likes">45</span></div>
-						
-						</li>
-						<li class="item">						
-								<img class="img-first" src='files/gallery.jpg' alt='gallery-block'/><img class="img-second" src='files/gallery.jpg' alt='gallery-block'/>
-								<div class="item-info"><span class="name">Bora Dugic</span><span class="likes">9999</span></div>
-						
-						</li>
-						<li class="item">						
-								<img class="img-first" src='files/gallery.jpg' alt='gallery-block'/><img class="img-second" src='files/gallery.jpg' alt='gallery-block'/>
-								<div class="item-info"><span class="name">Marko Markovic</span><span class="likes">45</span></div>
-						
-						</li>
-						<li class="item">						
-								<img class="img-first" src='files/gallery.jpg' alt='gallery-block'/><img class="img-second" src='files/gallery.jpg' alt='gallery-block'/>
-								<div class="item-info"><span class="name">Marko Markovic</span><span class="likes">45</span></div>
-						
-						</li>
-						<li class="item">						
-								<img class="img-first" src='files/gallery.jpg' alt='gallery-block'/><img class="img-second" src='files/gallery.jpg' alt='gallery-block'/>
-								<div class="item-info"><span class="name">Marko Markovic</span><span class="likes">45</span></div>
-						
-						</li>
-						<li class="item">						
-								<img class="img-first" src='files/gallery.jpg' alt='gallery-block'/><img class="img-second" src='files/gallery.jpg' alt='gallery-block'/>
-								<div class="item-info"><span class="name">Marko Markovic</span><span class="likes">45</span></div>
-						
-						</li>
-						<li class="item">						
-								<img class="img-first" src='files/gallery.jpg' alt='gallery-block'/><img class="img-second" src='files/gallery.jpg' alt='gallery-block'/>
-								<div class="item-info"><span class="name">Marko Markovic</span><span class="likes">45</span></div>
-						
-						</li>
-						<li class="item">						
-								<img class="img-first" src='files/gallery.jpg' alt='gallery-block'/><img class="img-second" src='files/gallery.jpg' alt='gallery-block'/>
-								<div class="item-info"><span class="name">Marko Markovic</span><span class="likes">45</span></div>
-						
-						</li>
-						<li class="item">						
-								<img class="img-first" src='files/gallery.jpg' alt='gallery-block'/><img class="img-second" src='files/gallery.jpg' alt='gallery-block'/>
-								<div class="item-info"><span class="name">Marko Markovic</span><span class="likes">45</span></div>
-						
-						</li>
-						<li class="item">						
-								<img class="img-first" src='files/gallery.jpg' alt='gallery-block'/><img class="img-second" src='files/gallery.jpg' alt='gallery-block'/>
-								<div class="item-info"><span class="name">Marko Markovic</span><span class="likes">45</span></div>
-						
-						</li>
-						<li class="item">						
-								<img class="img-first" src='files/gallery.jpg' alt='gallery-block'/><img class="img-second" src='files/gallery.jpg' alt='gallery-block'/>
-								<div class="item-info"><span class="name">Marko Markovic</span><span class="likes">45</span></div>
-						
-						</li>	
 						
 						
 					</ul>
 					<div class="holder">
 					</div>
 			</div>
+			<div class="btns signup-g"><a href="#" id="prijava" onclick="verifyContest()">Prijavi se</a></div>
 	</div>
 	<div id="fb-root"></div>
 </body>
