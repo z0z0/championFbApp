@@ -87,6 +87,26 @@
 						 </tr>  	
 						<?php
 						}
+						
+						if(!empty($_POST)) {
+							$id_upload = $_POST['id'];
+							$odobreno = $_POST['status'];
+							$id_upload = 8;
+							$odobreno = 1;
+							$update = " update upload 
+										set	f_odobreno = $odobreno
+										where id_upload= $id_upload
+										
+									"; 
+							try { 
+								$stmt = $db->prepare($update); 
+								$result = $stmt->execute(); 
+							} 
+							catch(PDOException $ex) { 
+							
+								die("Failed to run update: " . $ex->getMessage()); 
+							} 
+						}
 						?>
 
 			</tbody>
